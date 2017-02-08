@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- $projectname$
+     $WebPage$
+     © $CompanyName$, $year$
+	 
+	 The manifest file. -->
+<RevitAddIns>
+  <AddIn Type="DBApplication">
+  	<AddInId>$guid1$</AddInId>
+    <Name>$projectname$</Name>
+    <Assembly>$projectname$/$projectname$.dll</Assembly>
+    <FullClassName>$RootNamespace$.$safeprojectname$.ExternalDBApplication</FullClassName>
+    <VendorId>$VendorId$</VendorId>
+    <VendorDescription>$CompanyName$, $WebPage$</VendorDescription>
+  </AddIn>
+</RevitAddIns>

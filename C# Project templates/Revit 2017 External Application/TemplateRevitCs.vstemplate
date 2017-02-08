@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Type="Project" Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Revit 2017 External Application</Name>
+    <Description>Revit 2017 add-in project (Application).</Description>
+    <Icon>TemplateIcon.ico</Icon>
+    <ProjectType>CSharp</ProjectType>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>RevitAddin</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+  </TemplateData>
+  <TemplateContent>
+    <CustomParameters>
+      <CustomParameter Name="$ClientId$" Value="BUSHMAN" />
+      <CustomParameter Name="$VendorId$" Value="ru.blogspot.revit-addins" />
+      <CustomParameter Name="$CompanyName$" Value="Bushman" />
+      <CustomParameter Name="$RootNamespace$" Value="Bushman" />
+      <CustomParameter Name="$WebPage$" Value="https://revit-addins.blogspot.ru" />
+      <CustomParameter Name="$AppYear$" Value="2017" />
+    </CustomParameters>
+    <Project ReplaceParameters="true" File="TemplateRevitCs.csproj">
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.csproj.user">TemplateRevitCs.csproj.user</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.addin">RegisterAddin.addin</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ExternalApplication.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ExternalApplication.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ExternalCommand.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ExternalCommand.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Tools.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">RevitPatches.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Tools.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">RevitPatches.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ExternalCommandAvailability.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ExternalCommandAvailability.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Properties\AssemblyInfo.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Properties\Resources.Designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Properties\Resources.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="false">Resources\Button_image.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false">Resources\Button_tooltip_image.png</ProjectItem>
+      <ProjectItem ReplaceParameters="false">packages.config</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.chm">Revit_Add-In_help_file_stub.chm</ProjectItem>
+      <ProjectItem ReplaceParameters="true">readme.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="true">License.txt</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

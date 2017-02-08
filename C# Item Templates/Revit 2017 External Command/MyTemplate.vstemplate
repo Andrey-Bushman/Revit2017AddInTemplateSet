@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>ExternalCommand.cs</DefaultName>
+    <Name>Revit external command</Name>
+    <Description>Revit add-in external command</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>__TemplateIcon.ico</Icon>
+    <PreviewImage>__PreviewImage.ico</PreviewImage>
+  </TemplateData>
+  <TemplateContent>
+    <CustomParameters>
+      <CustomParameter Name="$ClientId$" Value="BUSHMAN" />
+      <CustomParameter Name="$VendorId$" Value="ru.blogspot.revit-addins" />
+      <CustomParameter Name="$CompanyName$" Value="Bushman" />
+      <CustomParameter Name="$RootNamespace$" Value="Bushman" />
+      <CustomParameter Name="$WebPage$" Value="https://revit-addins.blogspot.ru" />
+      <CustomParameter Name="$AppYear$" Value="2017" />
+    </CustomParameters>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">ExternalCommand.cs</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.resx" ReplaceParameters="true">ExternalCommand.resx</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

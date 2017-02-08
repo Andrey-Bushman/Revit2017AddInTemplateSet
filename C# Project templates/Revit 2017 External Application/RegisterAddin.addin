@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- $projectname$
+     $WebPage$
+     © $CompanyName$, $year$
+	 
+	 The manifest file. -->
+<RevitAddIns>
+  <AddIn Type="Application">
+  	<AddInId>$guid1$</AddInId>
+    <Name>$projectname$</Name>
+    <Assembly>$projectname$/$projectname$.dll</Assembly>
+    <FullClassName>$RootNamespace$.$safeprojectname$.ExternalApplication</FullClassName>
+    <VendorId>$VendorId$</VendorId>
+    <VendorDescription>$CompanyName$, $WebPage$</VendorDescription>
+  </AddIn>
+</RevitAddIns>

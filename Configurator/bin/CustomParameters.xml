@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <!-- RevitAddInTemplateSet code sources. -->
+  <RevitAddInTemplateSet_Src>
+    <ProjectTemplatesRootFolder>..\..\C# Project templates</ProjectTemplatesRootFolder>
+    <ItemTemplatesRootFolder>..\..\C# Item Templates</ItemTemplatesRootFolder>
+  </RevitAddInTemplateSet_Src>
+  <!-- The target directories for ZIP-files copying. -->
+  <VisualStudioTemplateFolders>
+    <!-- The locations of Visual Studio Project Templates. -->
+    <CustomProjectTemplatesLocations>
+      <Path>%USERPROFILE%\Documents\Visual Studio 2013\Templates\ProjectTemplates\Visual C#</Path>
+      <Path>%USERPROFILE%\Documents\Visual Studio 2015\Templates\ProjectTemplates\Visual C#</Path>
+      <Path>%USERPROFILE%\Documents\Visual Studio 2017\Templates\ProjectTemplates\Visual C#</Path>
+    </CustomProjectTemplatesLocations>
+    <!-- The locations of Visual Studio Item Templates. -->
+    <CustomItemTemplatesLocations>
+      <Path>%USERPROFILE%\Documents\Visual Studio 2013\Templates\ItemTemplates\Visual C#</Path>
+      <Path>%USERPROFILE%\Documents\Visual Studio 2015\Templates\ItemTemplates\Visual C#</Path>
+      <Path>%USERPROFILE%\Documents\Visual Studio 2017\Templates\ItemTemplates\Visual C#</Path>
+    </CustomItemTemplatesLocations>
+  </VisualStudioTemplateFolders>
+  <!-- Custom parameters which are to be updated for each vstemplate-file. -->
+  <CustomParameters>
+    <CustomParameter Name="$ClientId$" Value="BUSHMAN" />
+    <CustomParameter Name="$VendorId$" Value="ru.blogspot.revit-addins" />
+    <CustomParameter Name="$CompanyName$" Value="Bushman" />
+    <CustomParameter Name="$RootNamespace$" Value="Bushman" />
+    <CustomParameter Name="$WebPage$" Value="https://revit-addins.blogspot.ru" />
+    <CustomParameter Name="$AppYear$" Value="2017" />
+  </CustomParameters>
+</Settings>
