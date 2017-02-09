@@ -31,7 +31,7 @@ these templates:
   * #004. Link the command with the command availability:
   		https://www.youtube.com/watch?v=-_79p0CnKJY&t=8s
 
-  *	#005. Add ribbon tabs and panels:
+  * #005. Add ribbon tabs and panels:
   		https://www.youtube.com/watch?v=wlskC5PTmH8&t=4s
 
   * #006. Template resources using:
