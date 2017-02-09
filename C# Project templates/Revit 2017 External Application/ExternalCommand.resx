@@ -161,7 +161,7 @@
     <comment>Ribbon tab name.</comment>
   </data>
   <data name="_aviability_type" xml:space="preserve">
-    <value>$RootNamespace$.$safeprojectname$.</value>
+    <value>$RootNamespace$.$safeprojectname$.ExternalCommandAvailability</value>
     <comment>The type which implements the IExternalCommandAvailability interface.</comment>
   </data>
   <data name="_auto_location" xml:space="preserve">
