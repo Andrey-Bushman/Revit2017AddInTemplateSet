@@ -1,6 +1,6 @@
 readme.txt
 © Andrey Bushman, 2017
-https://revit-addins.blogspot.ru
+https://revit-addins.blogspot.ru/2017/02/revit-visual-studio.html
 
 This is the set of Visual Studio 2015 templates for Revit 2017 
 add-ins creating.

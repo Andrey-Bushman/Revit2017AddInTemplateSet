@@ -28,7 +28,7 @@
     <StartAction>Program</StartAction>
     <StartProgram>$(ProgramW6432)\Autodesk\Revit $AppYear$\Revit.exe</StartProgram>
 	<StartArguments>/language ENU</StartArguments>
-	<EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+	<EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
