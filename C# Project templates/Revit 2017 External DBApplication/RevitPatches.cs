@@ -40,6 +40,9 @@ namespace $RootNamespace$.$safeprojectname${
         /// .CurrentThread.CurrentUICulture' and 'Thread
         /// .CurrentThread.CurrentCulture' properties according
         /// the UI localization of Revit current session.
+        /// 
+        /// More info read here:
+        /// https://revit-addins.blogspot.ru/2017/01/revit-201711.html
         /// </summary>
         /// <param name="lang">The target language.</param>
         public static void PatchCultures(LanguageType lang) {

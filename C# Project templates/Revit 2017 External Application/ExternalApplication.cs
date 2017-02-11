@@ -6,10 +6,11 @@
  * © $CompanyName$, $year$
  *
  * The external application. This is the entry point of the
- * '$projectname$' add-in.
+ * '$projectname$' (Revit add-in).
  */
 #region Namespaces
 using System;
+using System.IO;
 using System.Collections.Generic;
 using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.Attributes;
@@ -27,31 +28,51 @@ using System.Linq;
 #endregion
 
 namespace $RootNamespace$.$safeprojectname${
-	
-  sealed class ExternalApplication : IExternalApplication{
-	  
-    Result IExternalApplication.OnStartup(
-        UIControlledApplication uic_app) {
 
-        // Fix the bug of Revit 2017.1.1
-        RevitPatches.PatchCultures(uic_app
-            .ControlledApplication.Language);
+	/// <summary>
+	/// Revit external application.
+	/// </summary>	
+	sealed class ExternalApplication : IExternalApplication{
 
-        // Create the tabs, panels, and buttons
-        Tools.BuildUI(uic_app, Assembly.GetExecutingAssembly(), 
-            typeof(Resources));
+        /// <summary>
+        /// This method will be executed when Autodesk Revit 
+        /// will be started.
+        /// </summary>
+        /// <param name="uic_app">A handle to the application 
+        /// being started.</param>
+        /// <returns>Indicates if the external application 
+        /// completes its work successfully.</returns>
+        Result IExternalApplication.OnStartup(
+            UIControlledApplication uic_app) {
 
-        // TODO: put your code here.
+            // Fix the bug of Revit 2017.1.1
+            // More info read here:
+            // https://revit-addins.blogspot.ru/2017/01/revit-201711.html
+            RevitPatches.PatchCultures(uic_app
+                .ControlledApplication.Language);
 
-        return Result.Succeeded;
-    }
+            // Create the tabs, panels, and buttons
+            Tools.BuildUI(uic_app, Assembly
+                .GetExecutingAssembly(), typeof(Resources));
 
-    Result IExternalApplication.OnShutdown(
-		UIControlledApplication uic_app){
-			
-		// TODO: put your code here (optional).
+            // TODO: put your code here.
 
-      return Result.Succeeded;
-    }
-  }
+            return Result.Succeeded;
+        }
+
+        /// <summary>
+        /// This method will be executed when Autodesk Revit 
+        /// shuts down.</summary>
+        /// <param name="uic_app">A handle to the application 
+        /// being shut down.</param>
+        /// <returns>Indicates if the external application 
+        /// completes its work successfully.</returns>
+        Result IExternalApplication.OnShutdown(
+            UIControlledApplication uic_app) {
+
+            // TODO: put your code here (optional).
+
+            return Result.Succeeded;
+        }
+	}
 }

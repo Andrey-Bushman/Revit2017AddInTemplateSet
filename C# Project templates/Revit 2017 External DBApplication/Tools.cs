@@ -27,14 +27,28 @@ using System.Linq;
 
 namespace $RootNamespace$.$safeprojectname${
 	
-  static class Tools {
+    /// <summary>
+    /// This class is for internal using by the Revit add-ins. 
+    /// </summary>
+    static class Tools {
 
+        /// <summary>
+        /// Get a string from the localized resources.
+        /// </summary>
+        /// <param name="cmd_type">The command type. It must to
+        /// implement the IExternalCommand interface.</param>
+        /// <param name="default_resources_type">The type which
+        /// contains the default values of necessary resources.
+        /// </param>
+        /// <param name="key">Resource key.</param>
+        /// <returns>It returns the localized string or null if
+        /// found nothing.</returns>
         public static string GetResourceString(
-        	Type cmd_type,
-        	Type default_resources_type,
-        	string key){
+            Type cmd_type,
+            Type default_resources_type,
+            string key) {
 
-        	if (cmd_type == null) {
+            if (cmd_type == null) {
                 throw new ArgumentNullException(nameof(
                     cmd_type));
             }
@@ -49,34 +63,45 @@ namespace $RootNamespace$.$safeprojectname${
                     cmd_type));
             }
 
-        	ResourceManager res_mng = new ResourceManager(
-        		cmd_type);
+            ResourceManager res_mng = new ResourceManager(
+                cmd_type);
 
-        	ResourceManager default_res_mng = 
-        		new ResourceManager(default_resources_type);
+            ResourceManager default_res_mng =
+                new ResourceManager(default_resources_type);
 
-        	string value = res_mng?.GetString(key);
+            string value = res_mng.GetString(key);
 
-        	if (string.IsNullOrEmpty(value)){
+            if (string.IsNullOrEmpty(value)) {
 
-        		value = default_res_mng?.GetString(key);
-        	}
-
-        	res_mng?.ReleaseAllResources();
-
-        	if (default_res_mng != res_mng) {
-                default_res_mng?.ReleaseAllResources();
+                value = default_res_mng.GetString(key);
             }
 
-        	return value;
+            res_mng.ReleaseAllResources();
+
+            if (default_res_mng != res_mng) {
+                default_res_mng.ReleaseAllResources();
+            }
+
+            return value;
         }
 
+        /// <summary>
+        /// Get an image from the localized resources.
+        /// </summary>
+        /// <param name="cmd_type">The command type. It must to
+        /// implement the IExternalCommand interface.</param>
+        /// <param name="default_resources_type">The type which
+        /// contains the default values of necessary resources.
+        /// </param>
+        /// <param name="key">Resource key.</param>
+        /// <returns>It returns the image or null if found 
+        /// nothing.</returns>
         public static BitmapSource GetResourceImage(
-        	Type cmd_type,
-        	Type default_resources_type,
-        	string key){
+            Type cmd_type,
+            Type default_resources_type,
+            string key) {
 
-        	if (cmd_type == null) {
+            if (cmd_type == null) {
                 throw new ArgumentNullException(nameof(
                     cmd_type));
             }
@@ -91,41 +116,41 @@ namespace $RootNamespace$.$safeprojectname${
                     cmd_type));
             }
 
-        	ResourceManager res_mng = new ResourceManager(
-        		cmd_type);
+            ResourceManager res_mng = new ResourceManager(
+                cmd_type);
 
-        	ResourceManager default_res_mng = 
-        		new ResourceManager(default_resources_type);
+            ResourceManager default_res_mng =
+                new ResourceManager(default_resources_type);
 
-        	Bitmap ttp_image = null;
+            Bitmap ttp_image = res_mng.GetObject(key) as Bitmap
+                ;
 
-        	if (res_mng != null){
-	        	ttp_image = (Bitmap)res_mng?.GetObject(key);
-	        }
+            if (ttp_image == null) {
 
-        	if (ttp_image == null){
-
-        		ttp_image = (Bitmap)default_res_mng?.GetObject(
-        			key);
-        	}
-
-        	res_mng?.ReleaseAllResources();
-
-        	if (default_res_mng != res_mng) {
-                default_res_mng?.ReleaseAllResources();
+                ttp_image = default_res_mng.GetObject(key) as
+                    Bitmap;
             }
 
-        	if (ttp_image == null){
-        		return null;
-        	}
-        	else{
-	            BitmapSource ttp_bitmap_src = Imaging
-	                .CreateBitmapSourceFromHBitmap(
-	                ttp_image.GetHbitmap(), IntPtr.Zero,
-	                WPF.Int32Rect.Empty, BitmapSizeOptions
-	                .FromEmptyOptions());
+            res_mng.ReleaseAllResources();
 
-	            return ttp_bitmap_src;
+            if (default_res_mng != res_mng) {
+
+                default_res_mng.ReleaseAllResources();
+            }
+
+            if (ttp_image == null) {
+
+                return null;
+            }
+            else {
+
+                BitmapSource ttp_bitmap_src = Imaging
+                    .CreateBitmapSourceFromHBitmap(
+                    ttp_image.GetHbitmap(), IntPtr.Zero,
+                    WPF.Int32Rect.Empty, BitmapSizeOptions
+                    .FromEmptyOptions());
+
+                return ttp_bitmap_src;
             }
         }
     }

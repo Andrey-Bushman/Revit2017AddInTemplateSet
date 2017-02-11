@@ -27,21 +27,42 @@ using System.Linq;
 #endregion
 
 namespace $RootNamespace$.$safeprojectname${
-	
-  sealed class ExternalDBApplication :
-        IExternalDBApplication {
 
+    /// <summary>
+    /// The DB-level external application for subscribing to 
+    /// DB-level events and updaters.
+    /// </summary>
+    sealed class ExternalDBApplication :
+          IExternalDBApplication {
+
+        /// <summary>
+        /// This method executes some tasks when Autodesk Revit
+        /// starts. Typically, event handlers and updaters are
+        /// registered in this method.
+        /// </summary>
+        /// <param name="ctrl_app">Handle to the Revit 
+        /// Application object.</param>
+        /// <returns>Indicates if the external db application 
+        /// completes its work successfully.</returns>
         ExternalDBApplicationResult IExternalDBApplication
             .OnStartup(ControlledApplication ctrl_app) {
 
             // Fix the bug of Revit 2017.1.1
-	        RevitPatches.PatchCultures(ctrl_app.Language);
+            RevitPatches.PatchCultures(ctrl_app.Language);
 
             // TODO: put your code here.
 
             return ExternalDBApplicationResult.Succeeded;
         }
 
+        /// <summary>
+        /// This method executes some tasks when Autodesk Revit
+        /// shuts down.
+        /// </summary>
+        /// <param name="application">Handle to the Revit 
+        /// Application object.</param>
+        /// <returns>Indicates if the external db application 
+        /// completes its work successfully.</returns>
         ExternalDBApplicationResult IExternalDBApplication
             .OnShutdown(ControlledApplication application) {
 
