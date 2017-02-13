@@ -1,5 +1,6 @@
 // This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
+
 /* $projectname$
  * ExternalApplication.cs
  * $WebPage$
@@ -22,7 +23,6 @@ using System.Reflection;
 using System.Drawing;
 using System.Windows.Media.Imaging;
 using System.Windows.Interop;
-using System.IO;
 using WPF = System.Windows;
 using System.Linq;
 #endregion

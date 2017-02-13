@@ -21,7 +21,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,7 +33,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -116,9 +116,9 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy /Y "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$"
-mkdir "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$projectname$\help"
-xcopy /Y /E /R "$(ProjectDir)bin\debug\*" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$projectname$"
-copy /Y "$(ProjectDir)*.chm" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$projectname$\help"</PostBuildEvent>
+mkdir "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)\help"
+xcopy /Y /E /R "$(ProjectDir)bin\$(Configuration)\*" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)"
+copy /Y "$(ProjectDir)*.chm" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)\help"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -128,7 +128,7 @@ copy /Y "$(ProjectDir)*.chm" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$projec
   </Target>
   -->
   <Target Name="AfterClean">
-    <Delete Files="$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$projectname$.addin" />
-	<RemoveDir Directories="$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$projectname$" />
+    <Delete Files="$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName).addin" />
+	<RemoveDir Directories="$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)" />
   </Target>
 </Project>
