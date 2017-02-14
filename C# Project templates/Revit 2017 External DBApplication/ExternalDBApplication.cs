@@ -49,6 +49,8 @@ namespace $RootNamespace$.$safeprojectname${
             .OnStartup(ControlledApplication ctrl_app) {
 
             // Fix the bug of Revit 2017.1.1
+            // More info read here:
+            // https://revit-addins.blogspot.ru/2017/01/revit-201711.html
             RevitPatches.PatchCultures(ctrl_app.Language);
 
             // TODO: put your code here.

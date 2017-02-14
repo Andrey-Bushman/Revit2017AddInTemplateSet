@@ -73,6 +73,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+  	<Compile Include="ResourceKeyNames.cs" />
     <Compile Include="ExternalApplication.cs" />
     <Compile Include="ExternalCommandAvailability.cs" />
     <Compile Include="ExternalCommand.cs" />

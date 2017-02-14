@@ -77,9 +77,9 @@ namespace $RootNamespace$.$safeprojectname${
 
 
                 if (bool.TryParse(GetResourceString(cmd,
-                        default_resources_type,
-                        "_auto_location"), out result) &&
-                        result) {
+                        default_resources_type, 
+                        ResourceKeyNames.ButtonAutoLocation), 
+                        out result) && result) {
 
                     // Add the button on the ribbon panel.
                     Tools.AddButton(uic_app, cmd,
@@ -129,7 +129,8 @@ namespace $RootNamespace$.$safeprojectname${
 
             // The target ribbon tab name.
             string tab_name = GetResourceString(cmd_type,
-                default_resources_type, "_Ribbon_tab_name");
+                default_resources_type, ResourceKeyNames
+                .RibbonTabName);
 
             try {
                 /* Through the using of the tabs_dict 
@@ -145,7 +146,8 @@ namespace $RootNamespace$.$safeprojectname${
 
             // The target ribbon panel name
             string panel_name = GetResourceString(cmd_type,
-                default_resources_type, "_Ribbon_panel_name");
+                default_resources_type, ResourceKeyNames
+                .RibbonPanelName);
 
             RibbonPanel panel = uic_app.GetRibbonPanels(
                 tab_name).FirstOrDefault(
@@ -164,27 +166,30 @@ namespace $RootNamespace$.$safeprojectname${
             string help_file = Path.Combine(Path
                 .GetDirectoryName(this_assembly_path),
                 GetResourceString(cmd_type,
-                default_resources_type, "_Help_file_name"));
+                default_resources_type, ResourceKeyNames
+                .HelpFileName));
 
             ContextualHelp help = new ContextualHelp(
                 ContextualHelpType.ChmFile, help_file);
 
             // Help topic id (inside of help file).
             help.HelpTopicUrl = GetResourceString(cmd_type,
-                default_resources_type, "_Help_topic_Id");
+                default_resources_type, ResourceKeyNames
+                .HelpTopicId);
 
             string cmd_name = cmd_type.Name;
 
             string cmd_text = GetResourceString(cmd_type,
-                default_resources_type, "_Button_caption");
+                default_resources_type, ResourceKeyNames
+                .ButtonCaption);
 
             string cmd_tooltip = GetResourceString(cmd_type,
-                default_resources_type, "_Button_tooltip_text")
-                ;
+                default_resources_type, ResourceKeyNames
+                .ButtonTooltipText);
 
             string long_description = GetResourceString(
-                cmd_type, default_resources_type,
-                "_Button_long_description");
+                cmd_type, default_resources_type, 
+                ResourceKeyNames.ButtonLongDescription);
 
             PushButtonData button_data = new PushButtonData(
                 cmd_name, cmd_text,
@@ -193,7 +198,8 @@ namespace $RootNamespace$.$safeprojectname${
             // Get corresponding class name which implements 
             // the IExternalCommandAvailability interface
             var aviability_type = GetResourceString(cmd_type,
-                default_resources_type, "_aviability_type");
+                default_resources_type, ResourceKeyNames
+                .CommandAvailabilityType);
 
             var av_type = Type.GetType(aviability_type);
 
@@ -211,14 +217,14 @@ namespace $RootNamespace$.$safeprojectname${
             push_button.ToolTip = cmd_tooltip;
 
             BitmapSource btn_src_img = GetResourceImage(
-                cmd_type, default_resources_type,
-                "_Button_image");
+                cmd_type, default_resources_type, 
+                ResourceKeyNames.ButtonImage);
 
             push_button.LargeImage = btn_src_img;
 
             BitmapSource ttp_bitmap_src = GetResourceImage(
-                cmd_type, default_resources_type,
-                "_Button_tooltip_image");
+                cmd_type, default_resources_type, 
+                ResourceKeyNames.ButtonTooltipImage);
 
             push_button.ToolTipImage = ttp_bitmap_src;
             push_button.LongDescription = long_description;

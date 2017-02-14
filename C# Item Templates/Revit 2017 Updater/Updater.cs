@@ -69,7 +69,8 @@ namespace $rootnamespace${
             ResourceManager res_mng = new ResourceManager(
                 GetType());
 
-            var message = res_mng.GetString("_Auxiliary_text");
+            var message = res_mng.GetString(ResourceKeyNames
+            	.UpdaterAuxiliaryText);
 
             return message;
         }

@@ -65,13 +65,14 @@ namespace $rootnamespace${
 
             ResourceManager res_mng = new ResourceManager(
               GetType());
-            
+
             // ============================================
             // TODO: delete these code rows and put your code 
             // here.
-            TaskDialog.Show(res_mng.GetString("_message"), 
-            	string.Format(res_mng.GetString(
-            		"_command_message"), GetType().Name));
+            TaskDialog.Show(res_mng.GetString(ResourceKeyNames
+                .TaskDialogTitle), string.Format(res_mng
+                .GetString(ResourceKeyNames.TaskDialogMessage),
+                GetType().Name));
             // ============================================
 
             res_mng.ReleaseAllResources();

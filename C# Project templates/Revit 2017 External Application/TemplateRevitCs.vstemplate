@@ -25,6 +25,7 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.addin">RegisterAddin.addin</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalApplication.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalApplication.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ResourceKeyNames.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommand.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommand.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">Tools.cs</ProjectItem>
