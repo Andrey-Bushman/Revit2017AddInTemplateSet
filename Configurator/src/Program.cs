@@ -53,6 +53,9 @@ namespace Bushman.RevitAddInTemplateSet_Configurator {
                     Console.WriteLine(res_mng.GetString(
                         "ide_not_found"));
                     Console.ResetColor();
+
+                    res_mng.ReleaseAllResources();
+                    return;
                 }
 
                 string[] vs_versions = new[] { "11.0", "12.0",
