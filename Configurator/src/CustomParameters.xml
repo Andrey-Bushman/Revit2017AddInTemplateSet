@@ -1,26 +1,30 @@
 ﻿<?xml version='1.0' encoding='utf-8' ?>
+<!-- More info read here:
+https://revit-addins.blogspot.ru/2017/02/revit-visual-studio.html
+
+Code sources are here:
+https://github.com/Andrey-Bushman/Revit2017AddInTemplateSet -->
 <Settings>
-  <!-- RevitAddInTemplateSet code sources. -->
-  <RevitAddInTemplateSet_Src>
-    <ProjectTemplatesRootFolder>..\..\C# Project templates</ProjectTemplatesRootFolder>
-    <ItemTemplatesRootFolder>..\..\C# Item Templates</ItemTemplatesRootFolder>
-  </RevitAddInTemplateSet_Src>
-  <!-- The target directories for ZIP-files copying. -->
-  <VisualStudioTemplateFolders>
-    <!-- The locations of Visual Studio Project Templates. -->
-    <CustomProjectTemplatesLocations>
-      <Path>%USERPROFILE%\Documents\Visual Studio 2013\Templates\ProjectTemplates\Visual C#</Path>
-      <Path>%USERPROFILE%\Documents\Visual Studio 2015\Templates\ProjectTemplates\Visual C#</Path>
-      <Path>%USERPROFILE%\Documents\Visual Studio 2017\Templates\ProjectTemplates\Visual C#</Path>
-    </CustomProjectTemplatesLocations>
-    <!-- The locations of Visual Studio Item Templates. -->
-    <CustomItemTemplatesLocations>
-      <Path>%USERPROFILE%\Documents\Visual Studio 2013\Templates\ItemTemplates\Visual C#</Path>
-      <Path>%USERPROFILE%\Documents\Visual Studio 2015\Templates\ItemTemplates\Visual C#</Path>
-      <Path>%USERPROFILE%\Documents\Visual Studio 2017\Templates\ItemTemplates\Visual C#</Path>
-    </CustomItemTemplatesLocations>
-  </VisualStudioTemplateFolders>
-  <!-- Custom parameters which are to be updated for each vstemplate-file. -->
+  <!-- RevitAddInTemplateSet code sources. YOU DON'T NEED TO 
+  EDIT THESE SETTINGS IF YOU DIDN'T CHANGE PLACEMENT OF THESE 
+  DIRECTORIES.-->
+  <CodeSources>
+    <!-- Each subfolder of this folder contains the code 
+    sources of the individual project template. -->
+    <ProjectTemplatesRootFolder>..\..\C# Project templates
+    </ProjectTemplatesRootFolder>
+    <!-- Each subfolder of this folder contains the code 
+    sources of the individual item template. -->
+    <ItemTemplatesRootFolder>..\..\C# Item Templates
+    </ItemTemplatesRootFolder>
+  </CodeSources>
+  
+  <!-- Custom parameters which are to be updated in the 
+  vstemplate-file of code sources of each template before they 
+  will be builded and installed. YOU ARE TO EDIT THE VALUES OF 
+  'VALUE' ATTRIBUTES. Set their values as you need. But you 
+  aren't to edit the values of 'Name' attributes! Also, don't 
+  delete the 'CustomParameter' xml-elements. -->
   <CustomParameters>
     <CustomParameter Name='$ClientId$' Value='BUSHMAN'/>
     <CustomParameter Name='$VendorId$'
