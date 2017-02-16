@@ -39,3 +39,4 @@ these templates:
 
   * #007. Multilanguage add-ins creating:
   		https://www.youtube.com/watch?v=abxy-Ynff3w
+Join the chat at https://gitter.im/Revit2017AddInTemplateSet/Lobby
