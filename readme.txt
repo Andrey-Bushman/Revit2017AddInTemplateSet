@@ -11,10 +11,13 @@ It contains:
   * Revit 2017 External DBApplication (C# Project Template)
   * Revit 2017 External Command (C# Item Template)
   * Revit 2017 External Command Availability (C# Item Template)
+  * Revit 2017 Updater (C# Item Template)
 
 Also it contains configurator which can configure the settings 
 of these templates for you and install them on your local 
 machine from their code sources.
+
+Join the chat at https://gitter.im/Revit2017AddInTemplateSet/Lobby
 
 These video lessons show how to install it and how to work with 
 these templates:
@@ -39,4 +42,3 @@ these templates:
 
   * #007. Multilanguage add-ins creating:
   		https://www.youtube.com/watch?v=abxy-Ynff3w
-Join the chat at https://gitter.im/Revit2017AddInTemplateSet/Lobby
