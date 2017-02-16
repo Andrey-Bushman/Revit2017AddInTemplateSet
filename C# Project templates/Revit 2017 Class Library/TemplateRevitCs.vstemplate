@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Type="Project" Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
   <TemplateData>
-    <Name>Revit 2017 External DBApplication</Name>
-    <Description>Revit 2017 add-in project (DBApplication).</Description>
+    <Name>Revit 2017 Class Library</Name>
+    <Description>Revit 2017 Class Library.</Description>
     <Icon>TemplateIcon.ico</Icon>
     <ProjectType>CSharp</ProjectType>
     <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>RevitDBAddin</DefaultName>
+    <DefaultName>RevitClassLibrary</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
     <LocationField>Enabled</LocationField>
     <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
@@ -22,14 +22,12 @@
     </CustomParameters>
     <Project ReplaceParameters="true" File="TemplateRevitCs.csproj">
       <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.csproj.user">TemplateRevitCs.csproj.user</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.addin">RegisterAddin.addin</ProjectItem>
-      <ProjectItem ReplaceParameters="true">ExternalDBApplication.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true">ExternalDBApplication.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Class1.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Class1.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\AssemblyInfo.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\Resources.Designer.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\Resources.resx</ProjectItem>
       <ProjectItem ReplaceParameters="false">packages.config</ProjectItem>
-      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.chm">Revit_Add-In_help_file_stub.chm</ProjectItem>
       <ProjectItem ReplaceParameters="true">readme.txt</ProjectItem>
       <ProjectItem ReplaceParameters="true">License.txt</ProjectItem>
     </Project>

@@ -19,12 +19,14 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using System.Resources;
-using $rootnamespace$.Properties;
 using System.Reflection;
 using System.Drawing;
 using System.Windows.Media.Imaging;
 using System.Windows.Interop;
 using WPF = System.Windows;
+using System.Linq;
+using Bushman.RevitDevTools;
+using RDT = Bushman.RevitDevTools.Properties;
 #endregion
 
 namespace $rootnamespace${
@@ -35,7 +37,8 @@ namespace $rootnamespace${
     /// Revit model.
     /// </summary>	
 	[Transaction(TransactionMode.Manual)]
-    sealed class $safeitemname$ : IUpdater {
+    sealed partial class $safeitemname$ 
+    	: IUpdater {
 
         static AddInId addin_id;
         static UpdaterId updater_id;

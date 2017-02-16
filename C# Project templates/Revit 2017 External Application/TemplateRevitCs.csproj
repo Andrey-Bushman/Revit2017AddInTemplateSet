@@ -65,6 +65,10 @@
       <HintPath>$(SolutionDir)packages\Revit-2017.1.1-x64.Base.2.0.0\lib\net452\RevitAPIUIMacros.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="RevitDevTools, Version=2017.0.0.29159, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)packages\Revit2017DevTools.1.3.0\lib\net452\RevitDevTools.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -73,12 +77,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-  	<Compile Include="ResourceKeyNames.cs" />
     <Compile Include="ExternalApplication.cs" />
     <Compile Include="ExternalCommandAvailability.cs" />
     <Compile Include="ExternalCommand.cs" />
-    <Compile Include="Tools.cs" />
-    <Compile Include="RevitPatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -92,12 +93,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExternalCommand.resx">
       <DependentUpon>ExternalCommand.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RevitPatches.resx">
-      <DependentUpon>RevitPatches.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tools.resx">
-      <DependentUpon>Tools.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

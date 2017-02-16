@@ -18,13 +18,14 @@ using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System.Resources;
-using $RootNamespace$.$safeprojectname$.Properties;
 using System.Reflection;
 using System.Drawing;
 using System.Windows.Media.Imaging;
 using System.Windows.Interop;
 using WPF = System.Windows;
 using System.Linq;
+using Bushman.RevitDevTools;
+using RDT = Bushman.RevitDevTools.Properties;
 #endregion
 
 namespace $RootNamespace$.$safeprojectname${
@@ -32,7 +33,8 @@ namespace $RootNamespace$.$safeprojectname${
 	/// <summary>
 	/// Revit external application.
 	/// </summary>	
-	sealed class ExternalApplication : IExternalApplication{
+	sealed partial class ExternalApplication 
+		: IExternalApplication{
 
         /// <summary>
         /// This method will be executed when Autodesk Revit 
@@ -52,8 +54,9 @@ namespace $RootNamespace$.$safeprojectname${
                 .ControlledApplication.Language);
 
             // Create the tabs, panels, and buttons
-            Tools.BuildUI(uic_app, Assembly
-                .GetExecutingAssembly(), typeof(Resources));
+            UIBuilder.BuildUI(uic_app, Assembly
+                .GetExecutingAssembly(), typeof(RDT.Resources))
+                ;
 
             // TODO: put your code here.
 

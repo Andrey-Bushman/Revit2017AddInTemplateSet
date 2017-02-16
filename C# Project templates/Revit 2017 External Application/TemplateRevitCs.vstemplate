@@ -25,13 +25,8 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.addin">RegisterAddin.addin</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalApplication.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalApplication.resx</ProjectItem>
-      <ProjectItem ReplaceParameters="true">ResourceKeyNames.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommand.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommand.resx</ProjectItem>
-      <ProjectItem ReplaceParameters="true">Tools.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true">RevitPatches.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true">Tools.resx</ProjectItem>
-      <ProjectItem ReplaceParameters="true">RevitPatches.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommandAvailability.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommandAvailability.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\AssemblyInfo.cs</ProjectItem>

@@ -18,13 +18,14 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using System.Resources;
-using $RootNamespace$.$safeprojectname$.Properties;
 using System.Reflection;
 using System.Drawing;
 using System.Windows.Media.Imaging;
 using System.Windows.Interop;
 using WPF = System.Windows;
 using System.Linq;
+using Bushman.RevitDevTools;
+using RDT = Bushman.RevitDevTools.Properties;
 #endregion
 
 namespace $RootNamespace$.$safeprojectname${
@@ -33,8 +34,8 @@ namespace $RootNamespace$.$safeprojectname${
     /// This class provides an accessibility checking for an 
     /// external command of Revit.
     /// </summary>	
-	class ExternalCommandAvailability :
-        IExternalCommandAvailability {
+	sealed partial class ExternalCommandAvailability 
+		: IExternalCommandAvailability {
 
         /// <summary>
         /// This method provides the control over whether an 

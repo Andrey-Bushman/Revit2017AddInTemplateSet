@@ -17,7 +17,6 @@ using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System.Resources;
-using $RootNamespace$.$safeprojectname$.Properties;
 using System.Reflection;
 using System.Drawing;
 using System.Windows.Media.Imaging;
@@ -25,6 +24,8 @@ using System.Windows.Interop;
 using System.IO;
 using WPF = System.Windows;
 using System.Linq;
+using Bushman.RevitDevTools;
+using RDT = Bushman.RevitDevTools.Properties;
 #endregion
 
 namespace $RootNamespace$.$safeprojectname${
@@ -33,8 +34,8 @@ namespace $RootNamespace$.$safeprojectname${
     /// The DB-level external application for subscribing to 
     /// DB-level events and updaters.
     /// </summary>
-    sealed class ExternalDBApplication :
-          IExternalDBApplication {
+    sealed partial class ExternalDBApplication 
+    	: IExternalDBApplication {
 
         /// <summary>
         /// This method executes some tasks when Autodesk Revit
