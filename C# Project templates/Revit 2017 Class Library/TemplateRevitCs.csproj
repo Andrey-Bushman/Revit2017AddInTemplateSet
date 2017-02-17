@@ -66,14 +66,16 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitDevTools, Version=2017.0.0.26868, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)packages\Revit2017DevTools.1.5.0\lib\net452\RevitDevTools.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>$(SolutionDir)packages\Revit2017DevTools.1.6.0\lib\net452\RevitDevTools.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>

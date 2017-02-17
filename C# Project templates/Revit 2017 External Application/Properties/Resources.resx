@@ -157,7 +157,7 @@
     <comment>Ribbon panel name.</comment>
   </data>
   <data name="_Ribbon_tab_name" xml:space="preserve">
-    <value>$safeprojectname$</value>
+    <value>$projectname$</value>
     <comment>Ribbon tab name.</comment>
   </data>
   <data name="_auto_location" xml:space="preserve">

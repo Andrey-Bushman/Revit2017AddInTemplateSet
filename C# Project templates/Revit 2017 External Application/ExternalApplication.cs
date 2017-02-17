@@ -26,19 +26,25 @@ using WPF = System.Windows;
 using System.Linq;
 using $RootNamespace$.$safeprojectname$.Properties;
 using Bushman.RevitDevTools;
+using System.Xml.Linq;
 #endregion
 
 namespace $RootNamespace$.$safeprojectname${
 
-	/// <summary>
-	/// Revit external application.
-	/// </summary>	
-	sealed partial class ExternalApplication 
-		: IExternalApplication{
+    /// <summary>
+    /// Revit external application.
+    /// </summary>  
+    sealed partial class ExternalApplication
+        : IExternalApplication {
 
         /// <summary>
         /// This method will be executed when Autodesk Revit 
         /// will be started.
+        /// 
+        /// WARNING
+        /// Don't use the RevitDevTools.dll features directly 
+        /// in this method. You are to call other methods which
+        /// do it instead of.
         /// </summary>
         /// <param name="uic_app">A handle to the application 
         /// being started.</param>
@@ -47,20 +53,29 @@ namespace $RootNamespace$.$safeprojectname${
         Result IExternalApplication.OnStartup(
             UIControlledApplication uic_app) {
 
+            AppDomain.CurrentDomain.AssemblyResolve +=
+                CurDom_AssemblyResolve;
+
+            Initialize(uic_app);
+
+            // TODO: put your code here.
+
+            return Result.Succeeded;
+        }
+
+        void Initialize(UIControlledApplication uic_app) {
             // Fix the bug of Revit 2017.1.1
             // More info read here:
             // https://revit-addins.blogspot.ru/2017/01/revit-201711.html
             RevitPatches.PatchCultures(uic_app
                 .ControlledApplication.Language);
 
+
+
             // Create the tabs, panels, and buttons
             UIBuilder.BuildUI(uic_app, Assembly
                 .GetExecutingAssembly(), typeof(Resources))
                 ;
-
-            // TODO: put your code here.
-
-            return Result.Succeeded;
         }
 
         /// <summary>
@@ -73,9 +88,94 @@ namespace $RootNamespace$.$safeprojectname${
         Result IExternalApplication.OnShutdown(
             UIControlledApplication uic_app) {
 
-            // TODO: put your code here (optional).
+            AppDomain.CurrentDomain.AssemblyResolve -=
+                CurDom_AssemblyResolve;
 
             return Result.Succeeded;
         }
-	}
+
+        // It contains info from the AssemblyResolves.xml file.
+        static Dictionary<string, string> asm_dict =
+            GetResolves();
+
+        /// <summary>
+        /// This method reads info from the 
+        /// AssemblyResolves.xml file.
+        /// </summary>
+        /// <returns>It returns a dictionary.</returns>
+        private static Dictionary<string, string> GetResolves(
+            ) {
+
+            string asm_dir = Path.GetDirectoryName(Assembly
+                .GetExecutingAssembly().Location);
+
+            string xml_file = Path.Combine(asm_dir,
+                "AssemblyResolves.xml");
+
+            XElement xml = null;
+
+            if (!File.Exists(xml_file) ||
+                (xml = XElement.Load(xml_file)) == null) {
+
+                RecoveryFile(xml_file);
+                xml = XElement.Load(xml_file);
+            }
+
+            Dictionary<string, string> dict =
+                new Dictionary<string, string>();
+
+            foreach (var item in xml.Elements("Assembly")) {
+
+                string key = item.Attribute("Name").Value;
+                string value = Environment
+                    .ExpandEnvironmentVariables(item.Attribute(
+                        "Location").Value);
+
+                if (!dict.ContainsKey(key)) {
+
+                    dict.Add(key, value);
+                }
+            }
+
+            return dict;
+        }
+
+        /// <summary>
+        /// Recover the AssemblyResolves.xml file.
+        /// </summary>
+        /// <param name="xml_file"></param>
+        private static void RecoveryFile(string xml_file) {
+
+            if (string.IsNullOrEmpty(xml_file)) {
+                throw new ArgumentException(nameof(xml_file));
+            }
+
+            string data =
+@"<?xml version='1.0' encoding='utf-8' ?>
+<!-- This file contains info about location of assemblies. -->
+<Assemblies>
+  <Assembly Name='Revit2017DevTools'
+            Location='%AppData%\Bushman\Revit\2017\RevitDevTools\RevitDevTools.dll'/>
+</Assemblies>";
+
+            XElement xml = XElement.Parse(data);
+            xml.Save(xml_file);
+        }
+
+        private Assembly CurDom_AssemblyResolve(object sender,
+            ResolveEventArgs args) {
+
+            string name = args.Name.Split(',').First();
+
+            if (!asm_dict.ContainsKey(name)) {
+
+                return null;
+            }
+
+            Assembly result = Assembly.LoadFrom(asm_dict[name])
+                ;
+
+            return result;
+        }
+    }
 }

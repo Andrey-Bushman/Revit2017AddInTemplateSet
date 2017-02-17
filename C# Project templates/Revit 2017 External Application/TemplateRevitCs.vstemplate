@@ -21,6 +21,7 @@
       <CustomParameter Name="$AppYear$" Value="2017" />
     </CustomParameters>
     <Project ReplaceParameters="true" File="TemplateRevitCs.csproj">
+      <ProjectItem ReplaceParameters="true">AssemblyResolves.xml</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.csproj.user">TemplateRevitCs.csproj.user</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.addin">RegisterAddin.addin</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalApplication.cs</ProjectItem>

@@ -32,6 +32,7 @@
       <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.chm">Revit_Add-In_help_file_stub.chm</ProjectItem>
       <ProjectItem ReplaceParameters="true">readme.txt</ProjectItem>
       <ProjectItem ReplaceParameters="true">License.txt</ProjectItem>
+      <ProjectItem ReplaceParameters="true">AssemblyResolves.xml</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

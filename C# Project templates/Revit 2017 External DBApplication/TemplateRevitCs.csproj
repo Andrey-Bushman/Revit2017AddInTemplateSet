@@ -66,14 +66,16 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitDevTools, Version=2017.0.0.26868, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)packages\Revit2017DevTools.1.5.0\lib\net452\RevitDevTools.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>$(SolutionDir)packages\Revit2017DevTools.1.6.0\lib\net452\RevitDevTools.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xaml" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +93,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AssemblyResolves.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -114,7 +119,19 @@
     <PostBuildEvent>copy /Y "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$"
 mkdir "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)\help"
 xcopy /Y /E /R "$(ProjectDir)bin\$(Configuration)\*" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)"
-copy /Y "$(ProjectDir)*.chm" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)\help"</PostBuildEvent>
+copy /Y "$(ProjectDir)*.chm" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)\help"
+
+SET rdt="$(AppData)\Bushman\Revit\$AppYear$\RevitDevTools"
+mkdir %25rdt%25
+
+SET p=$(SolutionDir)packages\
+SET a=Revit$AppYear$DevTools
+for /D %25%25x in ("%25p%25%25a%25*") do if not defined f set "f=%25%25x"
+SET pa=%25f%25\lib\net452\
+
+copy /Y "%25pa%25*" %25rdt%25
+
+:: echo %25pa%25 &gt; "$(AppData)\Bushman\Revit\$AppYear$\RevitDevTools\path.txt"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
