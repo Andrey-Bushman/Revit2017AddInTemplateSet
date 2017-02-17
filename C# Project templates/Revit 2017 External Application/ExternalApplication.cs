@@ -24,8 +24,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Interop;
 using WPF = System.Windows;
 using System.Linq;
+using $RootNamespace$.$safeprojectname$.Properties;
 using Bushman.RevitDevTools;
-using RDT = Bushman.RevitDevTools.Properties;
 #endregion
 
 namespace $RootNamespace$.$safeprojectname${
@@ -55,7 +55,7 @@ namespace $RootNamespace$.$safeprojectname${
 
             // Create the tabs, panels, and buttons
             UIBuilder.BuildUI(uic_app, Assembly
-                .GetExecutingAssembly(), typeof(RDT.Resources))
+                .GetExecutingAssembly(), typeof(Resources))
                 ;
 
             // TODO: put your code here.

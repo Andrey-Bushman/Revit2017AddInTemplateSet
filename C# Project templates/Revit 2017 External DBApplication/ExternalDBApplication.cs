@@ -25,7 +25,7 @@ using System.IO;
 using WPF = System.Windows;
 using System.Linq;
 using Bushman.RevitDevTools;
-using RDT = Bushman.RevitDevTools.Properties;
+using $RootNamespace$.$safeprojectname$.Properties;
 #endregion
 
 namespace $RootNamespace$.$safeprojectname${
