@@ -40,6 +40,15 @@
     <StartAction>Program</StartAction>
     <StartProgram>$(ProgramW6432)\Autodesk\Revit $AppYear$\Revit.exe</StartProgram>
   </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug via Revit Add-In Manager|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug via Revit Add-In Manager\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AdWindows, Version=2015.11.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>$(SolutionDir)packages\Revit-2017.1.1-x64.Base.2.0.0\lib\net452\AdWindows.dll</HintPath>
@@ -83,6 +92,11 @@
     <Compile Include="ExternalCommandAvailability.cs" />
     <Compile Include="ExternalCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.ru.Designer.cs">
+      <DependentUpon>Resources.ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -117,6 +131,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Button_image.png" />
@@ -126,32 +144,24 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$"
-mkdir "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)\help"
-xcopy /Y /E /R "$(ProjectDir)bin\$(Configuration)\*" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)"
-copy /Y "$(ProjectDir)*.chm" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)\help"
-
+    <PostBuildEvent>
 SET rdt="$(AppData)\Bushman\Revit\$AppYear$\RevitDevTools"
-mkdir %25rdt%25
-
 SET p=$(SolutionDir)packages\
 SET a=Revit$AppYear$DevTools
 for /D %25%25x in ("%25p%25%25a%25*") do if not defined f set "f=%25%25x"
 SET pa=%25f%25\lib\net452\
 
-copy /Y "%25pa%25*" %25rdt%25
+IF NOT "$(ConfigurationName)" == "Debug via Revit Add-In Manager" (
+copy /Y "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$"
+mkdir "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)\help"
+xcopy /Y /E /R "$(ProjectDir)bin\$(Configuration)\*" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)"
+copy /Y "$(ProjectDir)*.chm" "$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)\help"
 
-:: echo %25pa%25 &gt; "$(AppData)\Bushman\Revit\$AppYear$\RevitDevTools\path.txt"</PostBuildEvent>
+mkdir %25rdt%25
+
+copy /Y "%25pa%25*" %25rdt%25
+) ELSE (
+copy /Y "%25pa%25*" "$(TargetDir)"
+)</PostBuildEvent>
   </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
-  <Target Name="AfterClean">
-    <Delete Files="$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName).addin" />
-	<RemoveDir Directories="$(AppData)\Autodesk\REVIT\Addins\$AppYear$\$(ProjectName)" />
-  </Target>
 </Project>

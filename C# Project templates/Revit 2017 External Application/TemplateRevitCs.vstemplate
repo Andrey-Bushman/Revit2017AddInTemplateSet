@@ -33,6 +33,8 @@
       <ProjectItem ReplaceParameters="true">Properties\AssemblyInfo.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\Resources.Designer.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\Resources.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Properties\Resources.ru.Designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Properties\Resources.ru.resx</ProjectItem>
       <ProjectItem ReplaceParameters="false">Resources\Button_image.png</ProjectItem>
       <ProjectItem ReplaceParameters="false">Resources\Button_tooltip_image.png</ProjectItem>
       <ProjectItem ReplaceParameters="false">packages.config</ProjectItem>
