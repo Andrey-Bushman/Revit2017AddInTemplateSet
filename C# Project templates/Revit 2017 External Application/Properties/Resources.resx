@@ -168,4 +168,8 @@
     <value>$RootNamespace$.$safeprojectname$.</value>
     <comment>The type which implements the IExternalCommandAvailability interface.</comment>
   </data>
+  <data name="_Error" xml:space="preserve">
+    <value>Error</value>
+    <comment>The title of TaskDialog window when it notifies about an exception.</comment>
+  </data>
 </root>

@@ -55,14 +55,38 @@ namespace $RootNamespace$.$safeprojectname${
         ExternalDBApplicationResult IExternalDBApplication
             .OnStartup(ControlledApplication ctrl_app) {
 
-            AppDomain.CurrentDomain.AssemblyResolve +=
-               CurDom_AssemblyResolve;
+            ResourceManager res_mng = new ResourceManager(
+                GetType());
+            ResourceManager def_res_mng = new ResourceManager(
+                typeof(Properties.Resources));
 
-            Initialize(ctrl_app);
+            ExternalDBApplicationResult result = 
+                ExternalDBApplicationResult.Succeeded;
 
-            // TODO: put your code here.
+            try {
 
-            return ExternalDBApplicationResult.Succeeded;
+                AppDomain.CurrentDomain.AssemblyResolve +=
+                    CurDom_AssemblyResolve;
+
+                Initialize(ctrl_app);
+
+                // TODO: put your code here.
+
+            }
+            catch (Exception ex) {
+
+                TaskDialog.Show(def_res_mng.GetString("_Error")
+                    , ex.Message);
+
+                result = ExternalDBApplicationResult.Failed;
+            }
+            finally {
+
+                res_mng.ReleaseAllResources();
+                def_res_mng.ReleaseAllResources();
+            }
+
+            return result;
         }
 
         /// <summary>
@@ -76,12 +100,36 @@ namespace $RootNamespace$.$safeprojectname${
         ExternalDBApplicationResult IExternalDBApplication
             .OnShutdown(ControlledApplication application) {
 
-            // TODO: put your code here (optional).
+            ResourceManager res_mng = new ResourceManager(
+                GetType());
+            ResourceManager def_res_mng = new ResourceManager(
+                typeof(Properties.Resources));
 
-            AppDomain.CurrentDomain.AssemblyResolve -=
+            ExternalDBApplicationResult result =
+                ExternalDBApplicationResult.Succeeded;
+
+            try {
+
+                // TODO: put your code here (optional).
+
+                AppDomain.CurrentDomain.AssemblyResolve -=
                 CurDom_AssemblyResolve;
 
-            return ExternalDBApplicationResult.Succeeded;
+            }
+            catch (Exception ex) {
+
+                TaskDialog.Show(def_res_mng.GetString("_Error")
+                    , ex.Message);
+
+                result = ExternalDBApplicationResult.Failed;
+            }
+            finally {
+
+                res_mng.ReleaseAllResources();
+                def_res_mng.ReleaseAllResources();
+            }
+
+            return result;
         }
 
         void Initialize(ControlledApplication app) {

@@ -59,29 +59,47 @@ namespace $RootNamespace$.$safeprojectname${
         /// does not succeed, Revit will undo any changes made 
         /// by the external command.</returns>	  
         Result IExternalCommand.Execute(
-        	ExternalCommandData commandData, ref string message,
-            ElementSet elements) {
-
-            UIApplication ui_app = commandData?.Application;
-            UIDocument ui_doc = ui_app?.ActiveUIDocument;
-            Application app = ui_app?.Application;
-            Document doc = ui_doc?.Document;
+            ExternalCommandData commandData, ref string message
+            , ElementSet elements) {
 
             ResourceManager res_mng = new ResourceManager(
-              GetType());
+                  GetType());
+            ResourceManager def_res_mng = new ResourceManager(
+                typeof(Properties.Resources));
 
-            // ============================================
-            // TODO: delete these code rows and put your code 
-            // here.
-            TaskDialog.Show(res_mng.GetString(ResourceKeyNames
-                .TaskDialogTitle), string.Format(res_mng
-                .GetString(ResourceKeyNames.TaskDialogMessage),
-                GetType().Name));
-            // ============================================
+            Result result = Result.Succeeded;
 
-            res_mng.ReleaseAllResources();
+            try {
 
-            return Result.Succeeded;
+                UIApplication ui_app = commandData?.Application
+                    ;
+                UIDocument ui_doc = ui_app?.ActiveUIDocument;
+                Application app = ui_app?.Application;
+                Document doc = ui_doc?.Document;
+
+                // ============================================
+                // TODO: delete these code rows and put your 
+                // code here.
+                TaskDialog.Show(res_mng.GetString(
+                    ResourceKeyNames.TaskDialogTitle), string
+                    .Format(res_mng.GetString(ResourceKeyNames
+                    .TaskDialogMessage), GetType().Name));
+                // ============================================
+            }
+            catch (Exception ex) {
+
+                TaskDialog.Show(def_res_mng.GetString("_Error")
+                    , ex.Message);
+
+                result = Result.Failed;
+            }
+            finally {
+
+                res_mng.ReleaseAllResources();
+                def_res_mng.ReleaseAllResources();
+            }
+
+            return result;
         }
-  }
+	}
 }

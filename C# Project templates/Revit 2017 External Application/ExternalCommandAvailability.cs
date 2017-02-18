@@ -57,13 +57,39 @@ namespace $RootNamespace$.$safeprojectname${
             UIApplication applicationData,
             CategorySet selectedCategories) {
 
-            if (applicationData.ActiveUIDocument != null &&
+            ResourceManager res_mng = new ResourceManager(
+                  GetType());
+            ResourceManager def_res_mng = new ResourceManager(
+                typeof(Properties.Resources));
+
+            bool result = false;
+
+            try {
+
+            // ============================================
+            // TODO: delete these code rows and put your code 
+            // here.
+                if (applicationData.ActiveUIDocument != null &&
                 selectedCategories.IsEmpty) {
-                return true;
+
+                    result = true;
+                }
+            // ============================================
             }
-            else {
-                return false;
+            catch (Exception ex) {
+
+                TaskDialog.Show(def_res_mng.GetString("_Error")
+                    , ex.Message);
+
+                result = false;
             }
+            finally {
+
+                res_mng.ReleaseAllResources();
+                def_res_mng.ReleaseAllResources();
+            }
+
+            return result;
         }
 	}
 }

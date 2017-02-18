@@ -31,7 +31,7 @@ using $rootnamespace$.Properties;
 
 namespace $rootnamespace${
 
-    sealed partial class $safeitemname$ {
+    public sealed partial class $safeitemname$ {
 
     }
 }

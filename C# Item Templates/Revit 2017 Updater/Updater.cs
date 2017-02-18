@@ -44,9 +44,29 @@ namespace $rootnamespace${
         static UpdaterId updater_id;
 
         public $safeitemname$(AddInId id) {
-            addin_id = id;
-            updater_id = new UpdaterId(addin_id, new Guid(
-                "$guid7$"));
+
+            ResourceManager res_mng = new ResourceManager(
+                  GetType());
+            ResourceManager def_res_mng = new ResourceManager(
+                typeof(Properties.Resources));
+            try {
+                addin_id = id;
+                updater_id = new UpdaterId(addin_id, new Guid(
+                    "$guid7$"));
+
+                // TODO: put your code here.
+
+            }
+            catch (Exception ex) {
+
+                TaskDialog.Show(def_res_mng.GetString("_Error")
+                    , ex.Message);
+            }
+            finally {
+
+                res_mng.ReleaseAllResources();
+                def_res_mng.ReleaseAllResources();
+            }
         }
 
         /// <summary>
@@ -58,8 +78,24 @@ namespace $rootnamespace${
         /// document and information about the changes that 
         /// triggered the update.</param>
         void IUpdater.Execute(UpdaterData data) {
+            ResourceManager res_mng = new ResourceManager(
+                  GetType());
+            ResourceManager def_res_mng = new ResourceManager(
+                typeof(Properties.Resources));
+            try {
 
-            throw new NotImplementedException();
+                // TODO: put your code here.
+            }
+            catch (Exception ex) {
+
+                TaskDialog.Show(def_res_mng.GetString("_Error")
+                    , ex.Message);
+            }
+            finally {
+
+                res_mng.ReleaseAllResources();
+                def_res_mng.ReleaseAllResources();
+            }
         }
 
         /// <summary>
@@ -70,16 +106,61 @@ namespace $rootnamespace${
         String IUpdater.GetAdditionalInformation() {
 
             ResourceManager res_mng = new ResourceManager(
-                GetType());
+                  GetType());
+            ResourceManager def_res_mng = new ResourceManager(
+                typeof(Properties.Resources));
 
-            var message = res_mng.GetString(ResourceKeyNames
-            	.UpdaterAuxiliaryText);
+            string message = "The exception happend in the " +
+                "'IUpdater.GetAdditionalInformation()' method"
+                + " code.";
 
+            try {
+
+                message = res_mng.GetString(ResourceKeyNames
+                .UpdaterAuxiliaryText);
+            }
+            catch (Exception ex) {
+
+                TaskDialog.Show(def_res_mng.GetString("_Error")
+                    , ex.Message);
+            }
+            finally {
+
+                res_mng.ReleaseAllResources();
+                def_res_mng.ReleaseAllResources();
+            }
             return message;
         }
 
         ChangePriority IUpdater.GetChangePriority() {
+
+            // TODO: delete this code row!
             throw new NotImplementedException();
+
+            ResourceManager res_mng = new ResourceManager(
+                  GetType());
+            ResourceManager def_res_mng = new ResourceManager(
+                typeof(Properties.Resources));
+
+            ChangePriority cp = default(ChangePriority);
+
+            try {
+
+                // TODO: Put your code here. Don't forget to 
+                // change the ChangePriority value.
+            }
+            catch (Exception ex) {
+
+                TaskDialog.Show(def_res_mng.GetString("_Error")
+                    , ex.Message);
+            }
+            finally {
+
+                res_mng.ReleaseAllResources();
+                def_res_mng.ReleaseAllResources();
+            }
+
+            return cp;
         }
 
         /// <summary>
@@ -90,6 +171,7 @@ namespace $rootnamespace${
         /// </summary>
         /// <returns></returns>
         UpdaterId IUpdater.GetUpdaterId() {
+
             return updater_id;
         }
 
@@ -99,6 +181,7 @@ namespace $rootnamespace${
         /// </summary>
         /// <returns></returns>
         String IUpdater.GetUpdaterName() {
+            
             return nameof($safeitemname$);
         }
     }

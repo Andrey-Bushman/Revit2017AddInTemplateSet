@@ -53,14 +53,36 @@ namespace $RootNamespace$.$safeprojectname${
         Result IExternalApplication.OnStartup(
             UIControlledApplication uic_app) {
 
-            AppDomain.CurrentDomain.AssemblyResolve +=
+            ResourceManager res_mng = new ResourceManager(
+                  GetType());
+            ResourceManager def_res_mng = new ResourceManager(
+                typeof(Properties.Resources));
+
+            Result result = Result.Succeeded;
+
+            try {
+
+                AppDomain.CurrentDomain.AssemblyResolve +=
                 CurDom_AssemblyResolve;
 
-            Initialize(uic_app);
+                Initialize(uic_app);
 
-            // TODO: put your code here.
+                // TODO: put your code here.
+            }
+            catch (Exception ex) {
 
-            return Result.Succeeded;
+                TaskDialog.Show(def_res_mng.GetString("_Error")
+                    , ex.Message);
+
+                result = Result.Failed;
+            }
+            finally {
+
+                res_mng.ReleaseAllResources();
+                def_res_mng.ReleaseAllResources();
+            }
+
+            return result;
         }
 
         void Initialize(UIControlledApplication uic_app) {
@@ -88,10 +110,33 @@ namespace $RootNamespace$.$safeprojectname${
         Result IExternalApplication.OnShutdown(
             UIControlledApplication uic_app) {
 
-            AppDomain.CurrentDomain.AssemblyResolve -=
+            ResourceManager res_mng = new ResourceManager(
+                  GetType());
+            ResourceManager def_res_mng = new ResourceManager(
+                typeof(Properties.Resources));
+
+            Result result = Result.Succeeded;
+
+            try {
+
+                AppDomain.CurrentDomain.AssemblyResolve -=
                 CurDom_AssemblyResolve;
 
-            return Result.Succeeded;
+            }
+            catch (Exception ex) {
+
+                TaskDialog.Show(def_res_mng.GetString("_Error")
+                    , ex.Message);
+
+                result = Result.Failed;
+            }
+            finally {
+
+                res_mng.ReleaseAllResources();
+                def_res_mng.ReleaseAllResources();
+            }
+
+            return result;
         }
 
         // It contains info from the AssemblyResolves.xml file.
