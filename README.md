@@ -20,6 +20,8 @@ It allows to you edit and debug your commands code without Revit restarting.
 Templates of all projects contain the search engine for searching of the absent assemblies.
 You can use the `AssemblyResolves.xml` configuration file for managing of where is located your absent assemblies.
 
+The projects created on the base of these templates can be checked by [PVS-Studio](http://www.viva64.com/en/pvs-studio/) static code analyzer.
+
 Also it contains configurator which can configure the settings
 of these templates for you and install them on your local
 machine from their code sources.
