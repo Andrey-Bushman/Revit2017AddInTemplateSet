@@ -9,9 +9,15 @@ It contains:
 
   * Revit 2017 External Application (C# Project Template)
   * Revit 2017 External DBApplication (C# Project Template)
+  * Revit 2017 Class Library (C# Project Template)
   * Revit 2017 External Command (C# Item Template)
   * Revit 2017 External Command Availability (C# Item Template)
   * Revit 2017 Updater (C# Item Template)
+  * Revit 2017 New Class (C# Item Template)
+
+The `Revit 2017 External Application` contains the special additional configuration - `Debug via Revit Add-In Manager`. It allows to you edit and debug your commands code without Revit restarting. 
+
+Templates of all projects contain the search engine for searching of the absent assemblies. You can use the `AssemblyResolves.xml` configuration file for managing of where is located your absent assemblies.  
 
 Also it contains configurator which can configure the settings 
 of these templates for you and install them on your local 
@@ -42,3 +48,6 @@ these templates:
 
   * #007. Multilanguage add-ins creating:
   		https://www.youtube.com/watch?v=abxy-Ynff3w
+    
+  * #008. Debugging with Add-In Manager using
+    https://www.youtube.com/watch?v=QFFwG6rz0gc
