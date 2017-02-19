@@ -74,8 +74,8 @@
       <HintPath>$(SolutionDir)packages\Revit-2017.1.1-x64.Base.2.0.0\lib\net452\RevitAPIUIMacros.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="RevitDevTools, Version=2017.0.0.26868, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>$(SolutionDir)packages\Revit2017DevTools.1.6.0\lib\net452\RevitDevTools.dll</HintPath>
+    <Reference Include="RevitDevTools, Version=2017.0.0.369, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>$(SolutionDir)packages\Revit2017DevTools.1.7.0\lib\net452\RevitDevTools.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />

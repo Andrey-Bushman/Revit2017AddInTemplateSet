@@ -154,13 +154,13 @@
     <value>default_command</value>
     <comment>Идентификатор раздела справки, используемый по умолчанию.</comment>
   </data>
-  <data name="_Ribbon_panel_name" xml:space="preserve">
-    <value>Панель</value>
-    <comment>Наименование ribbon-панели.</comment>
+  <data name="_Ribbon_panel_key" xml:space="preserve">
+    <value>_Ribbon_panel_name</value>
+    <comment>Наименование ключа ресурса, содержащиго имя ribbon-панели.</comment>
   </data>
-  <data name="_Ribbon_tab_name" xml:space="preserve">
-    <value>$projectname$</value>
-    <comment>Наименование вкладки.</comment>
+  <data name="_Ribbon_tab_key" xml:space="preserve">
+    <value>_Ribbon_tab_name</value>
+    <comment>Наименование ключа ресурса, содержащиго наименование вкладки.</comment>
   </data>
   <data name="_auto_location" xml:space="preserve">
     <value>true</value>

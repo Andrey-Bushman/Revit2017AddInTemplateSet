@@ -152,13 +152,13 @@
     <value>default_command</value>
     <comment>Help topic id.</comment>
   </data>
-  <data name="_Ribbon_panel_name" xml:space="preserve">
-    <value>Ribbon panel</value>
-    <comment>Ribbon panel name.</comment>
+  <data name="_Ribbon_panel_key" xml:space="preserve">
+    <value>_Ribbon_panel_name</value>
+    <comment>The resource key name which contains the ribbon panel name.</comment>
   </data>
-  <data name="_Ribbon_tab_name" xml:space="preserve">
-    <value>$projectname$</value>
-    <comment>Ribbon tab name.</comment>
+  <data name="_Ribbon_tab_key" xml:space="preserve">
+    <value>_Ribbon_tab_name</value>
+    <comment>The resource key name which contains the ribbon tab name.</comment>
   </data>
   <data name="_aviability_type" xml:space="preserve">
     <value>$RootNamespace$.$safeprojectname$.ExternalCommandAvailability</value>
