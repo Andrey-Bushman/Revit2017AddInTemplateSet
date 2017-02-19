@@ -24,6 +24,7 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.csproj.user">TemplateRevitCs.csproj.user</ProjectItem>
       <ProjectItem ReplaceParameters="true">Class1.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">Class1.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">Class1.ru.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\AssemblyInfo.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\Resources.Designer.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\Resources.resx</ProjectItem>

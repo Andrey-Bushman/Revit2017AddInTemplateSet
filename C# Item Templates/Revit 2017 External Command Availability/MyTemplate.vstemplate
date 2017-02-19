@@ -20,5 +20,6 @@
     </CustomParameters>
     <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">ExternalCommandAvailability.cs</ProjectItem>
     <ProjectItem SubType="" TargetFileName="$fileinputname$.resx" ReplaceParameters="true">ExternalCommandAvailability.resx</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.ru.resx" ReplaceParameters="true">ExternalCommandAvailability.ru.resx</ProjectItem>
   </TemplateContent>
 </VSTemplate>

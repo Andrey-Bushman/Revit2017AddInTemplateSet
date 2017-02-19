@@ -91,6 +91,9 @@
     <EmbeddedResource Include="ExternalDBApplication.resx">
       <DependentUpon>ExternalDBApplication.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExternalDBApplication.ru.resx">
+      <DependentUpon>ExternalDBApplication.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="AssemblyResolves.xml">

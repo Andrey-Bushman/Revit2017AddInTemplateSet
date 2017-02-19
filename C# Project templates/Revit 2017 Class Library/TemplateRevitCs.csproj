@@ -91,6 +91,9 @@
     <EmbeddedResource Include="Class1.resx">
       <DependentUpon>Class1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Class1.ru.resx">
+      <DependentUpon>Class1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="License.txt">

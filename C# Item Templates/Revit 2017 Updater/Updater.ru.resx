@@ -117,59 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="_Button_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_Button_long_description" xml:space="preserve">
-    <value>The command long description.</value>
-    <comment>The command long description.</comment>
-  </data>
-  <data name="_command_message" xml:space="preserve">
-    <value>This is default message.</value>
-    <comment>The stub of command default message.</comment>
-  </data>
-  <data name="_message" xml:space="preserve">
-    <value>Title</value>
-    <comment>The TaskDialog title. It is used by the command stub code.</comment>
-  </data>
-  <data name="_Button_caption" xml:space="preserve">
-    <value>Caption</value>
-    <comment>Button caption.</comment>
-  </data>
-  <data name="_Button_tooltip_text" xml:space="preserve">
-    <value>The command default tooltip text.</value>
-    <comment>Button tooltip text.</comment>
-  </data>
-  <data name="_Button_tooltip_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button_tooltip_image.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_Help_file_name" xml:space="preserve">
-    <value>help\$projectname$.chm</value>
-    <comment>Help file name.</comment>
-  </data>
-  <data name="_Help_topic_Id" xml:space="preserve">
-    <value>default_command</value>
-    <comment>Help topic id.</comment>
-  </data>
-  <data name="_Ribbon_panel_name" xml:space="preserve">
-    <value>Ribbon panel</value>
-    <comment>Ribbon panel name.</comment>
-  </data>
-  <data name="_Ribbon_tab_name" xml:space="preserve">
-    <value>$projectname$</value>
-    <comment>Ribbon tab name.</comment>
-  </data>
-  <data name="_auto_location" xml:space="preserve">
-    <value>true</value>
-    <comment>This record specifies whether it is necessary to create the button automatically for this command. Allowed values: true or false.</comment>
-  </data>
-  <data name="_aviability_type" xml:space="preserve">
-    <value>$RootNamespace$.$safeprojectname$.</value>
-    <comment>The type which implements the IExternalCommandAvailability interface.</comment>
-  </data>
-  <data name="_Error" xml:space="preserve">
-    <value>Error</value>
-    <comment>The title of TaskDialog window when it notifies about an exception.</comment>
+  <data name="_Auxiliary_text" xml:space="preserve">
+    <value>$CompanyName$, $WebPage$</value>
   </data>
 </root>

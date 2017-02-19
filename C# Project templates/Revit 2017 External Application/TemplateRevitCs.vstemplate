@@ -26,10 +26,13 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.addin">RegisterAddin.addin</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalApplication.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalApplication.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ExternalApplication.ru.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommand.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommand.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ExternalCommand.ru.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommandAvailability.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommandAvailability.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ExternalCommandAvailability.ru.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\AssemblyInfo.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\Resources.Designer.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\Resources.resx</ProjectItem>

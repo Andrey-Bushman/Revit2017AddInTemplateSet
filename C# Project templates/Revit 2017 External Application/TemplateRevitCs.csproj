@@ -107,7 +107,13 @@
     <EmbeddedResource Include="ExternalApplication.resx">
       <DependentUpon>ExternalApplication.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExternalApplication.ru.resx">
+      <DependentUpon>ExternalApplication.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExternalCommand.resx">
+      <DependentUpon>ExternalCommand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalCommand.ru.resx">
       <DependentUpon>ExternalCommand.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -125,6 +131,9 @@
   </ItemGroup>
   <ItemGroup>
   	<EmbeddedResource Include="ExternalCommandAvailability.resx">
+      <DependentUpon>ExternalCommandAvailability.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExternalCommandAvailability.ru.resx">
       <DependentUpon>ExternalCommandAvailability.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

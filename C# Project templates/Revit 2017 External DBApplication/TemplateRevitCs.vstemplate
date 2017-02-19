@@ -25,6 +25,7 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="$projectname$.addin">RegisterAddin.addin</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalDBApplication.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalDBApplication.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ExternalDBApplication.ru.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\AssemblyInfo.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\Resources.Designer.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">Properties\Resources.resx</ProjectItem>

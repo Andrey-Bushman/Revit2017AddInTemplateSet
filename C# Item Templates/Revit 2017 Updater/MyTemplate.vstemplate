@@ -20,5 +20,6 @@
     </CustomParameters>
     <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">Updater.cs</ProjectItem>
     <ProjectItem SubType="" TargetFileName="$fileinputname$.resx" ReplaceParameters="true">Updater.resx</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$.ru.resx" ReplaceParameters="true">Updater.ru.resx</ProjectItem>
   </TemplateContent>
 </VSTemplate>
