@@ -116,6 +116,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="$projectname$.chm" />
+    <None Include="$projectname$.ru.chm" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

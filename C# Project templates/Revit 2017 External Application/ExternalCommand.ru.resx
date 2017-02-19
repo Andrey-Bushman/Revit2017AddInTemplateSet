@@ -147,7 +147,7 @@
     <comment>Изображение, используемое в расширенной версии всплывающей подсказки.</comment>
   </data>
   <data name="_Help_file_name" xml:space="preserve">
-    <value>help\$projectname$.chm</value>
+    <value>help\$projectname$.ru.chm</value>
     <comment>Help file name.</comment>
   </data>
   <data name="_Help_topic_Id" xml:space="preserve">
