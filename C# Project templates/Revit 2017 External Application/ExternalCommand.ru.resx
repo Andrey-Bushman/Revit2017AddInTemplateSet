@@ -174,4 +174,11 @@
     <value>Ошибка</value>
     <comment>Заголовок окна TaskDialog, сообщающего о произошедшем исключении.</comment>
   </data>
+  <data name="_transaction_group_name" xml:space="preserve">
+    <value>TODO: Измените имя этой группы транзакции.</value>
+    <comment>Наименование группы транзакции.</comment>
+  </data>
+  <data name="_transaction_name" xml:space="preserve">
+    <value>TODO: Переименуйте эту транзакцию.</value>
+  </data>
 </root>

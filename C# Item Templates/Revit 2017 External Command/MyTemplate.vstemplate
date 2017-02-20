@@ -19,6 +19,7 @@
       <CustomParameter Name="$AppYear$" Value="2017" />
     </CustomParameters>
     <ProjectItem SubType="" TargetFileName="$fileinputname$.cs" ReplaceParameters="true">ExternalCommand.cs</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$_Work.cs" ReplaceParameters="true">ExternalCommand_Work.cs</ProjectItem>
     <ProjectItem SubType="" TargetFileName="$fileinputname$.resx" ReplaceParameters="true">ExternalCommand.resx</ProjectItem>
     <ProjectItem SubType="" TargetFileName="$fileinputname$.ru.resx" ReplaceParameters="true">ExternalCommand.ru.resx</ProjectItem>
   </TemplateContent>

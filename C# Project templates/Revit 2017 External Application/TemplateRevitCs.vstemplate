@@ -28,6 +28,7 @@
       <ProjectItem ReplaceParameters="true">ExternalApplication.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalApplication.ru.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommand.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true">ExternalCommand_Work.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommand.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommand.ru.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true">ExternalCommandAvailability.cs</ProjectItem>

@@ -172,4 +172,8 @@
     <value>Error</value>
     <comment>The title of TaskDialog window when it notifies about an exception.</comment>
   </data>
+  <data name="_transaction_group_name" xml:space="preserve">
+    <value>TODO: Change this transaction group name.</value>
+    <comment>Transaction group name.</comment>
+  </data>
 </root>

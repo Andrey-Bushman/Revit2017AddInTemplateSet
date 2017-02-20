@@ -56,7 +56,7 @@ namespace $rootnamespace${
         /// <returns>The result indicates if the execution 
         /// fails, succeeds, or was canceled by user. If it 
         /// does not succeed, Revit will undo any changes made 
-        /// by the external command.</returns>	  
+        /// by the external command.</returns>    
         Result IExternalCommand.Execute(
             ExternalCommandData commandData, ref string message
             , ElementSet elements) {
@@ -66,7 +66,7 @@ namespace $rootnamespace${
             ResourceManager def_res_mng = new ResourceManager(
                 typeof(Properties.Resources));
 
-            Result result = Result.Succeeded;
+            Result result = Result.Failed;
 
             try {
 
@@ -76,14 +76,34 @@ namespace $rootnamespace${
                 Application app = ui_app?.Application;
                 Document doc = ui_doc?.Document;
 
-                // ============================================
-                // TODO: delete these code rows and put your 
-                // code here.
-                TaskDialog.Show(res_mng.GetString(
-                    ResourceKeyNames.TaskDialogTitle), string
-                    .Format(res_mng.GetString(ResourceKeyNames
-                    .TaskDialogMessage), GetType().Name));
-                // ============================================
+                /* Wrap all transactions into the transaction 
+                 * group. At first we get the transaction group
+                 * localized name. */
+                var tr_gr_name = UIBuilder.GetResourceString(
+                    GetType(), typeof(Properties.Resources),
+                    "_transaction_group_name");
+
+                using (var tr_gr = new TransactionGroup(doc,
+                    tr_gr_name)) {
+
+                    if (TransactionStatus.Started == tr_gr
+                        .Start()) {
+
+                        /* Here do your work or the set of 
+                         * works... */
+                        if (DoWork(commandData, ref message,
+                            elements)) {
+
+                            tr_gr.Assimilate();
+                            tr_gr.Commit();
+                            result = Result.Succeeded;
+                        }
+                        else {
+
+                            tr_gr.RollBack();
+                        }
+                    }
+                }
             }
             catch (Exception ex) {
 

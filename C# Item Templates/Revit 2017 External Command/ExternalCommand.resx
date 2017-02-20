@@ -168,4 +168,11 @@
     <value>true</value>
     <comment>This record specifies whether it is necessary to create the button automatically for this command. Allowed values: true or false.</comment>
   </data>
+  <data name="_transaction_group_name" xml:space="preserve">
+    <value>TODO: Change this transaction group name.</value>
+    <comment>Transaction group name.</comment>
+  </data>
+  <data name="_transaction_name" xml:space="preserve">
+    <value>TODO: rename this transaction.</value>
+  </data>
 </root>
