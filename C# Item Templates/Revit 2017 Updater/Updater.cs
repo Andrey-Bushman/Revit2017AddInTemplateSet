@@ -37,7 +37,7 @@ namespace $rootnamespace${
     /// Revit model.
     /// </summary>	
 	[Transaction(TransactionMode.Manual)]
-    sealed partial class $safeitemname$ 
+    public sealed partial class $safeitemname$ 
     	: IUpdater {
 
         static AddInId addin_id;

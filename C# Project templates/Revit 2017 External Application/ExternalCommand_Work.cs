@@ -32,7 +32,8 @@ using $RootNamespace$.$safeprojectname$.Properties;
 
 
 namespace $RootNamespace$.$safeprojectname${
-    sealed partial class ExternalCommand {
+	
+    public sealed partial class ExternalCommand {
 
         private bool DoWork(ExternalCommandData commandData,
             ref String message, ElementSet elements) {

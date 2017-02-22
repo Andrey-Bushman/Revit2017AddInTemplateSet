@@ -31,7 +31,8 @@ using $rootnamespace$.Properties;
 
 
 namespace $rootnamespace${
-    sealed partial class $fileinputname$ {
+	
+    public sealed partial class $fileinputname$ {
 
         private bool DoWork(ExternalCommandData commandData,
             ref String message, ElementSet elements) {

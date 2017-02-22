@@ -34,7 +34,7 @@ namespace $RootNamespace$.$safeprojectname${
     /// This class provides an accessibility checking for an 
     /// external command of Revit.
     /// </summary>	
-	sealed partial class ExternalCommandAvailability 
+	public sealed partial class ExternalCommandAvailability 
 		: IExternalCommandAvailability {
 
         /// <summary>

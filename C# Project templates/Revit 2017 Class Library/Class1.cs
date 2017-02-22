@@ -27,7 +27,7 @@ using $RootNamespace$.$safeprojectname$.Properties;
 
 namespace $RootNamespace$.$safeprojectname${
     
-    sealed partial class Class1 {
+    public sealed partial class Class1 {
 
     }
 }

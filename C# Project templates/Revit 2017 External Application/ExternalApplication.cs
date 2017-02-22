@@ -34,7 +34,7 @@ namespace $RootNamespace$.$safeprojectname${
     /// <summary>
     /// Revit external application.
     /// </summary>  
-    sealed partial class ExternalApplication
+    public sealed partial class ExternalApplication
         : IExternalApplication {
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace $rootnamespace${
     /// external command of Revit.
     /// </summary>	
 	[Transaction(TransactionMode.Manual)]
-	sealed partial class $safeitemname$ 
+	public sealed partial class $safeitemname$ 
         : IExternalCommandAvailability {
 
         /// <summary>

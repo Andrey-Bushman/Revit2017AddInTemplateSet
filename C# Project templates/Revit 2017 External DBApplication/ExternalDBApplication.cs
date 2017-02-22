@@ -35,7 +35,7 @@ namespace $RootNamespace$.$safeprojectname${
     /// The DB-level external application for subscribing to 
     /// DB-level events and updaters.
     /// </summary>
-    sealed partial class ExternalDBApplication
+    public sealed partial class ExternalDBApplication
         : IExternalDBApplication {
 
         /// <summary>
