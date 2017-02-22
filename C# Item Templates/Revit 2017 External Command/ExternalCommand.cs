@@ -95,7 +95,6 @@ namespace $rootnamespace${
                             elements)) {
 
                             tr_gr.Assimilate();
-                            tr_gr.Commit();
                             result = Result.Succeeded;
                         }
                         else {
