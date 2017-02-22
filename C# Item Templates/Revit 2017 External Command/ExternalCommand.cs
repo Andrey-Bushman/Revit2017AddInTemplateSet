@@ -93,10 +93,12 @@ namespace $rootnamespace${
                          * works... */
                         if (DoWork(commandData, ref message,
                             elements)) {
+                        	
+                            if (TransactionStatus.Committed ==
+                                tr_gr.Assimilate()) {
 
-                            tr_gr.Assimilate();
-                            tr_gr.Commit();
-                            result = Result.Succeeded;
+                                result = Result.Succeeded;
+                            }
                         }
                         else {
 

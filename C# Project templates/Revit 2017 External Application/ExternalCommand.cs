@@ -95,9 +95,11 @@ namespace $RootNamespace$.$safeprojectname${
                         if (DoWork(commandData, ref message,
                             elements)) {
 
-                            tr_gr.Assimilate();
-                            tr_gr.Commit();
-                            result = Result.Succeeded;
+                            if (TransactionStatus.Committed ==
+                                tr_gr.Assimilate()) {
+
+                                result = Result.Succeeded;
+                            }
                         }
                         else {
 
